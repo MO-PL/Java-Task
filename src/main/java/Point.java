@@ -10,6 +10,7 @@ public class Point implements Serializable {
         this.y = y;
         this.id = id;
     }
+
     public void show(){
         System.out.println("x: " + x + ", y: " + y + ", id: " + id);
     }

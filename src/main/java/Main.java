@@ -28,9 +28,6 @@ public class Main {
             List<Line> finalList = setOfLines.BinaryNIO("binary.bin", 'r');
 //            for (Line finalLine: finalList) {
 //                finalLine.show();
-//
 //            }
-
-
         }
 }

@@ -16,7 +16,6 @@ public class SetOfLines {
         this.arrayOfLines = setArrayOfLines(setOfPoints);
     }
 
-
     public Hashtable<Integer, Boolean> readCSVDictionary(String path) {
         Hashtable<Integer, Boolean> result = new Hashtable<>();
         try (CSVReader csvReader = new CSVReader(new FileReader(path))) {
@@ -35,6 +34,7 @@ public class SetOfLines {
         }
         return result;
     }
+
     public Line[] setArrayOfLines(SetOfPoints setOfPoints) {
         Set<Integer> keys = dictionary.keySet();
         Line[] result = new Line[keys.size()];
@@ -45,24 +45,13 @@ public class SetOfLines {
         }
         return result;
     }
+
     public Line[] getTrueLines(){
         List<Line> records = new ArrayList<>();
         for (Line line:arrayOfLines) {
             if (line.someFlag) records.add(line);
         }
         return records.toArray(new Line[0]);
-    }
-
-    public static byte[] serialize(Object obj) throws IOException {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ObjectOutputStream os = new ObjectOutputStream(out);
-        os.writeObject(obj);
-        return out.toByteArray();
-    }
-    public static Object deserialize(byte[] data) throws IOException, ClassNotFoundException {
-        ByteArrayInputStream in = new ByteArrayInputStream(data);
-        ObjectInputStream is = new ObjectInputStream(in);
-        return is.readObject();
     }
 
     public  List<Line> BinaryNIO(String path, char mode){
@@ -88,6 +77,7 @@ public class SetOfLines {
         }
         return result;
     }
+
     public void show(){
         for (Line line: arrayOfLines){
             line.show();

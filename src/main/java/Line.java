@@ -8,6 +8,7 @@ public class Line implements Serializable {
         this.points = points;
         this.someFlag = someFlag;
     }
+
     public void show(){
         for (Point point: points) {
             point.show();
