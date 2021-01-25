@@ -1,0 +1,28 @@
+Dane są dwa pliki csv:
+ points.csv -> x;y;line_id - współrzędne punktów, które należą do linii o identyfikatorze line_id
+ lines.csv -> line_id;some_boolean - identyfikator linii oraz jakaś flaga o wartości true lub false
+
+Z danych zawartych w plikach csv utwórz obiekty klasy Line a następnie zapisz te linie, których flaga jest równa true, do pliku binarnego w zaproponowanym przez siebie formacie. Następnie wczytaj te obiekty z owego pliku i umieść je w kolekcji List<Line>.
+Podane poniżej klasy można dowolnie modyfikować.
+
+public class Point {
+ public final float x;
+ public final float y;
+
+ public Point(float x, float y) {
+  this.x = x;
+  this.y = y;
+ }
+}
+
+public class Line {
+ public final Point[] points;
+ public final boolean someFlag;
+
+ public Line(Point[] points, boolean someFlag) {
+  this.points = points;
+  this.someFlag = someFlag;
+ }
+}
+
+
