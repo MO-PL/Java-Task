@@ -70,15 +70,14 @@ public class SetOfLines {
         try {
             long start = System.currentTimeMillis();
             if(mode == 'w' || mode == 'W'){
-                System.out.println("No");
                 int[] a = {1, 2, 3, 4, 5};
               byte[] allBytes = SerializationUtils.serialize(getTrueLines());
 //                byte[] allBytes = SerializationUtils.serialize(a);
-                System.out.println(allBytes);
+//                System.out.println(allBytes);
                 Files.write(Paths.get(path), allBytes);
             } else if(mode == 'r' || mode == 'R'){
                 byte[] allBytes = Files.readAllBytes(Paths.get(path));
-                System.out.println(allBytes);
+//                System.out.println(allBytes);
                 Line[] arrayOfLines = SerializationUtils.deserialize(allBytes);
                 result = Arrays.asList(arrayOfLines);
             }
